@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endee AI - Multi-PDF Agentic RAG</title>
+    <!-- Google Fonts: Inter as requested -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Ionicons for modern icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <ion-icon name="layers-outline"></ion-icon>
+                <span>EndeeNode</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#workspace">Workspace</a></li>
+                <li><button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode"><ion-icon name="sunny-outline"></ion-icon></button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="badge">Next Generation AI Platform</div>
+            <h1 class="hero-title">Intelligent Document Insights with <span class="gradient-text">Agentic RAG</span></h1>
+            <p class="hero-subtitle">Upload multiple PDFs, connect to the Endee vector database, and perform advanced reasoning using Google's Gemini 1.5 Pro AI.</p>
+            <div class="hero-buttons">
+                <a href="#workspace" class="btn btn-primary">Start Chatting <ion-icon name="arrow-forward-outline"></ion-icon></a>
+                <a href="#features" class="btn btn-secondary">Explore Features <ion-icon name="apps-outline"></ion-icon></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="section-header">
+            <h2>Why Choose Endee?</h2>
+            <p>A production-ready solution for your organization's knowledge base.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><ion-icon name="documents-outline"></ion-icon></div>
+                <h3>Multi-PDF Support</h3>
+                <p>Upload and process thousands of pages of PDF documents automatically chunked for optimal retrieval accuracy.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><ion-icon name="flash-outline"></ion-icon></div>
+                <h3>High-Speed RAG</h3>
+                <p>Powered by Endee local vector database and MiniLM-L6-v2 embeddings for instant, sub-millisecond semantic search.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><ion-icon name="hardware-chip-outline"></ion-icon></div>
+                <h3>Agentic Reasoning</h3>
+                <p>Integrates Gemini 1.5 Pro to synthesize context, cite sources, and answer complex queries accurately and organically.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workspace / Output Display Section -->
+    <section id="workspace" class="workspace-section">
+        <div class="workspace-container">
+            <!-- Sidebar / Upload Area -->
+            <div class="upload-panel">
+                <div class="panel-header">
+                    <h3><ion-icon name="cloud-upload-outline"></ion-icon> Upload Knowledge</h3>
+                </div>
+                <div class="upload-area" id="upload-dropzone">
+                    <ion-icon name="document-attach-outline"></ion-icon>
+                    <p>Drag & drop PDFs here, or click to browse files</p>
+                    <input type="file" id="file-input" multiple hidden accept="application/pdf">
+                </div>
+                <ul class="file-list" id="file-list">
+                    <!-- Javascript will populate files here -->
+                </ul>
+                <button class="btn btn-primary w-full" id="upload-btn" disabled>Sync to Vector Database</button>
+            </div>
+
+            <!-- Chat Interface -->
+            <div class="chat-panel">
+                <div class="panel-header chat-header">
+                    <h3><ion-icon name="chatbubbles-outline"></ion-icon> AI Assistant</h3>
+                    <div class="status-indicator">
+                        <span class="status-dot pulsing"></span>
+                        <span class="status-text">Endee Active</span>
+                    </div>
+                </div>
+                <div class="chat-history" id="chat-history">
+                    <div class="message ai-message">
+                        <div class="avatar"><ion-icon name="sparkles-outline"></ion-icon></div>
+                        <div class="msg-content">Hello! I am connected to your document store. Upload some PDFs and ask me a question!</div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <textarea id="chat-input" placeholder="Ask a question about your documents..." rows="1"></textarea>
+                    <button class="send-btn" id="send-btn"><ion-icon name="paper-plane-outline"></ion-icon></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <ion-icon name="layers-outline"></ion-icon> EndeeNode
+            </div>
+            <p>&copy; 2026 Vijay Vector Project. Built with vanilla coding magic.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
